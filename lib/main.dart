@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:Agrolens/loading_page.dart';
 import 'package:flutter/services.dart';
-import 'intro_page.dart';
+import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,14 +15,14 @@ class AgrolensApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Agrolens',
-      theme: const CupertinoThemeData(
+      theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Color(0xFF53662f),
       ),
-      home: IntroPage(),
+      home: LoadingPage(),
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'dart:io';
+import 'package:Agrolens/result_page.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
 
 class CameraScreen extends StatefulWidget {
-  const CameraScreen({Key? key}) : super(key: key);
+  const CameraScreen({super.key});
 
   @override
   State<CameraScreen> createState() => _CameraScreenState();
@@ -44,7 +45,7 @@ class _CameraScreenState extends State<CameraScreen>
       }
 
       _controller = CameraController(
-        cameras![0], // Always use back camera
+        cameras![0], 
         ResolutionPreset.high,
         enableAudio: false,
       );
@@ -76,26 +77,6 @@ class _CameraScreenState extends State<CameraScreen>
       HapticFeedback.mediumImpact();
       _captureAnimationController.forward(from: 0);
     }
-  }
-
-  void _retakePhoto() async {
-    setState(() {
-      _capturedImage = null;
-      _isLoading = true;
-    });
-
-    HapticFeedback.lightImpact();
-
-    // Properly dispose and reinitialize
-    if (_controller.value.isInitialized) {
-      await _controller.dispose();
-    }
-
-    // Small delay to ensure proper cleanup
-    await Future.delayed(const Duration(milliseconds: 100));
-
-    // Reinitialize camera
-    await _initializeCamera();
   }
 
   void _showErrorSnackBar(String message) {
@@ -173,7 +154,7 @@ class _CameraScreenState extends State<CameraScreen>
             IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.pop(context),
-            ),
+                              ),
             const Text(
               "Find a rice leaf",
               style: TextStyle(
@@ -231,7 +212,7 @@ class _CameraScreenState extends State<CameraScreen>
           left: 20,
           right: 20,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.5),
               borderRadius: BorderRadius.circular(25),
@@ -243,15 +224,22 @@ class _CameraScreenState extends State<CameraScreen>
                   icon: const Icon(Icons.arrow_back, color: Colors.white),
                   onPressed: () => Navigator.pop(context),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.refresh, color: Colors.white),
-                  onPressed: _retakePhoto,
+                const Text(
+                  "Photo captured",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
+                const SizedBox(width: 48), 
               ],
             ),
           ),
         ),
-        // Centered analyze button
+        
+        
+
         Positioned(
           bottom: 50,
           left: 0,
@@ -259,8 +247,12 @@ class _CameraScreenState extends State<CameraScreen>
           child: Center(
             child: ElevatedButton.icon(
               onPressed: () {
-                _showSuccessSnackBar("Photo saved!");
-                Navigator.pop(context, _capturedImage);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(capturedImage: _capturedImage!),
+                  ),
+                );
               },
               icon: const Icon(CupertinoIcons.wand_stars),
               label: const Text("Analyze"),
@@ -288,7 +280,12 @@ class _CameraScreenState extends State<CameraScreen>
     return Scaffold(
       backgroundColor: Colors.black,
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? Container(
+              color: Colors.black, 
+              child: const Center(
+                child: CircularProgressIndicator(color: Colors.green),
+              ),
+            )
           : Stack(
               children: [
                 _capturedImage == null

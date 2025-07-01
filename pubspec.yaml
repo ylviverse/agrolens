@@ -12,12 +12,17 @@ dependencies:
   camera: ^0.11.1
   flutter_screenutil: ^5.8.4
   cupertino_icons: ^1.0.0
+  lottie: ^3.1.0
+  smooth_page_indicator: ^1.1.0
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.13.1
+  
 
 flutter:
   uses-material-design: true
@@ -25,6 +30,15 @@ flutter:
     - assets/images/agrolens_logo.jpg
     - assets/images/agrolens_logo.png
     - assets/images/agrolens_logo_transparent.png
+    - assets/animations/Camera_animation.json
+    - assets/animations/Farmer_crop.json
+    - assets/animations/Intro.json
+    - assets/animations/Camera.json
+    - assets/animations/check.json
+    - assets/animations/scan.json
+    - assets/animations/walking_plant.json
+
+   
     
 flutter_launcher_icons:
   android: true
