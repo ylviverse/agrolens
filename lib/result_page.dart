@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:flutter/material.dart'; // Import Material Design
-import 'package:flutter/cupertino.dart'; // Keep Cupertino for icons
+import 'package:flutter/material.dart'; 
+import 'package:flutter/cupertino.dart';
 import 'package:camera/camera.dart';
 import 'package:lottie/lottie.dart';
 

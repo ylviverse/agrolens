@@ -13,7 +13,7 @@ class CameraScreen extends StatefulWidget {
 }
 
 class _CameraScreenState extends State<CameraScreen>
-    with TickerProviderStateMixin {
+  with TickerProviderStateMixin {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
   XFile? _capturedImage;

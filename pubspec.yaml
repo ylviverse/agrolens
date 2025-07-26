@@ -14,7 +14,15 @@ dependencies:
   cupertino_icons: ^1.0.0
   lottie: ^3.1.0
   smooth_page_indicator: ^1.1.0
+  flutter_native_splash: ^2.4.6
 
+flutter_native_splash:
+  background_image: "assets/images/Background.png"
+  image: assets/images/agrolens_logo_transparent.png
+  android: true
+  ios: true
+  web: false
+  fullscreen: true
 
 
 dev_dependencies:
@@ -37,6 +45,8 @@ flutter:
     - assets/animations/check.json
     - assets/animations/scan.json
     - assets/animations/walking_plant.json
+    - assets/images/Background.png
+  
 
    
     
