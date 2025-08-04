@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:Agrolens/intro_page.dart'; 
+import 'package:Agrolens/pages/intro_page.dart'; 
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -104,7 +104,7 @@ class _LoadingPageState extends State<LoadingPage> {
                       lottieAsset: 'assets/animations/Camera.json',
                       title: 'Snap & Analyze',
                       description:
-                          'Easily analyze rice leaf diseases with the help of AI.\n\nRice diseases detectable are the following:\n\nRice blast\nBrown spot\nLeaf blight\nSheath blight\nBacterial leaf streak.',
+                          'Easily analyze rice leaf diseases with the help of AI.\n\nRice diseases detectable are the following:\n\nRice blast || Brown spot || Leaf blight\nSheath blight || Bacterial leaf streak.',
                       size: size,
                     ),
                     _buildOnboardingPage(
@@ -112,7 +112,7 @@ class _LoadingPageState extends State<LoadingPage> {
                       lottieAsset: 'assets/animations/Farmer_crop.json',
                       title: 'Protect Your Rice Crops',
                       description:
-                          'Get rice disease diagnoses and effective solutions to keep your crops healthy and maximize harvest.\n\nSomthing.....\n\nYlvi gwapa',
+                          'Get rice disease diagnoses and effective solutions to keep your crops healthy and maximize harvest.\n\nStay informed with the latest research and best practices for rice disease management.',
                       size: size,
                       isLastPage: true,
                     ),
@@ -191,8 +191,39 @@ class _LoadingPageState extends State<LoadingPage> {
               ),
             ),
 
+            if (!isLastPage) ...[
+              SizedBox(height: 50),
+              SizedBox(
+                width: double.infinity,
+                height: size.height * 0.07,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _pageController.nextPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: const Color(0xFF53662f),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    elevation: 5,
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      fontSize: size.width * 0.05,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+
             if (isLastPage) ...[
-              SizedBox(height: size.height * 0.100),
+              SizedBox(height: 70),
               SizedBox(
                 width: double.infinity,
                 height: size.height * 0.07,

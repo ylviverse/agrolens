@@ -1,4 +1,4 @@
-package com.example.agrolens
+package com.example.agrolens_v1
 
 import io.flutter.embedding.android.FlutterActivity
 

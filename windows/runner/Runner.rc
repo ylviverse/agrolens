@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "agrolens" "\0"
+            VALUE "FileDescription", "agrolens_v1" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "agrolens" "\0"
+            VALUE "InternalName", "agrolens_v1" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "agrolens.exe" "\0"
-            VALUE "ProductName", "agrolens" "\0"
+            VALUE "OriginalFilename", "agrolens_v1.exe" "\0"
+            VALUE "ProductName", "agrolens_v1" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

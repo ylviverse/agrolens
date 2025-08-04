@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:Agrolens/result_page.dart';
+import 'package:Agrolens/pages/result_page.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -89,7 +89,7 @@ class _CameraScreenState extends State<CameraScreen>
     );
   }
 
-  void _showSuccessSnackBar(String message) {
+  void showSuccessSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
