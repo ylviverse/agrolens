@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:Agrolens/pages/result_page.dart';
+import 'package:agrolens/pages/result_page.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

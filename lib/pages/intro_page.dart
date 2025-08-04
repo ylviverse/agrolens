@@ -1,4 +1,4 @@
-import 'package:Agrolens/camera_config/camera.dart';
+import 'package:agrolens/camera_config/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

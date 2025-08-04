@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:Agrolens/pages/intro_page.dart'; 
+import 'package:agrolens/pages/intro_page.dart'; 
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
